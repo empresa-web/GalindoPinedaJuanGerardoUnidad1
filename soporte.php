@@ -17,7 +17,7 @@
 
         <form class="chat-formulario" onsubmit="return enviarMensajeChat();">
             <input type="text" id="mensajeChat" placeholder="Escribe tu mensaje..." required>
-            <button type="submit">Enviar</button>
+            <button type="submit"><i class="bi bi-send"></i> Enviar</button>
         </form>
     </section>
 

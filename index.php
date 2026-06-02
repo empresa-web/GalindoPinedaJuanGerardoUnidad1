@@ -9,8 +9,8 @@
         </p>
 
         <div class="acciones">
-            <a href="registro.php" class="btn">Crear cuenta</a>
-            <a href="servicios.php" class="btn">Consultar servicios</a>
+            <a href="registro.php" class="btn"><i class="bi bi-person-plus"></i> Crear cuenta</a>
+            <a href="servicios.php" class="btn"><i class="bi bi-arrow-right-circle"></i> Consultar servicios</a>
         </div>
     </section>
 

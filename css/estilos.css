@@ -305,3 +305,269 @@ footer.pie {
         align-items: center;
     }
 }
+
+/* Animaciones generales */
+@keyframes aparecerSuave {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes entradaHero {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes brilloSuave {
+    0% {
+        box-shadow: 0 0 0 rgba(37, 99, 235, 0);
+    }
+    50% {
+        box-shadow: 0 0 22px rgba(37, 99, 235, 0.18);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(37, 99, 235, 0);
+    }
+}
+
+/* Mejoras visuales generales */
+.contenido {
+    animation: aparecerSuave 0.55s ease;
+}
+
+.encabezado {
+    background: linear-gradient(135deg, #111827, #1e3a8a);
+}
+
+.logo {
+    letter-spacing: 0.5px;
+}
+
+.logo::before {
+    content: "▣ ";
+    color: #60a5fa;
+}
+
+.menu {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+}
+
+.menu a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.menu a i {
+    font-size: 16px;
+}
+
+.menu a:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+/* Hero más profesional */
+.hero {
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(239,246,255,0.96)),
+        radial-gradient(circle at top right, rgba(37,99,235,0.18), transparent 35%);
+    border: 1px solid #e5e7eb;
+    animation: entradaHero 0.6s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    right: -60px;
+    bottom: -60px;
+    background: rgba(37,99,235,0.10);
+    border-radius: 50%;
+}
+
+.hero h2 {
+    color: #111827;
+}
+
+.hero p {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn,
+.acciones .btn,
+form button,
+.form-busqueda button {
+    transition: all 0.25s ease;
+}
+
+.btn:hover,
+.acciones .btn:hover,
+form button:hover,
+.form-busqueda button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(37,99,235,0.22);
+}
+
+/* Tarjetas modernas */
+.tarjeta,
+.bloque,
+.seccion,
+.resultado,
+.formulario {
+    border: 1px solid #e5e7eb;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+}
+
+.tarjeta:hover,
+.bloque:hover,
+.resultado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.10);
+    border-color: #bfdbfe;
+}
+
+.tarjeta h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tarjeta h3::before {
+    content: "●";
+    color: #2563eb;
+    font-size: 14px;
+}
+
+.seccion h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.seccion h2::before {
+    content: "";
+    width: 8px;
+    height: 28px;
+    background: #2563eb;
+    border-radius: 20px;
+}
+
+/* Formularios más profesionales */
+.formulario {
+    animation: aparecerSuave 0.55s ease;
+}
+
+.formulario input,
+.formulario textarea,
+form input,
+form textarea {
+    transition: border 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+    background: #ffffff;
+}
+
+.formulario input:focus,
+.formulario textarea:focus,
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.12);
+    transform: translateY(-1px);
+}
+
+/* Mensajes del sistema */
+.mensaje {
+    animation: brilloSuave 1.8s ease;
+}
+
+/* Chat más bonito */
+.chat-contenedor {
+    background:
+        linear-gradient(180deg, #f9fafb, #eef2ff);
+    border: 1px solid #dbeafe;
+}
+
+.mensaje-chat {
+    animation: aparecerSuave 0.3s ease;
+}
+
+.mensaje-chat.soporte {
+    background: #ffffff;
+    border-left: 4px solid #2563eb;
+}
+
+.mensaje-chat.usuario {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.mensaje-chat.usuario p,
+.mensaje-chat.usuario strong {
+    color: #ffffff;
+}
+
+.chat-formulario {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-formulario input {
+    margin-bottom: 0;
+}
+
+.chat-formulario button {
+    min-width: 110px;
+}
+
+/* Footer más trabajado */
+footer.pie {
+    background: linear-gradient(135deg, #111827, #1f2937);
+    border-top: 3px solid #2563eb;
+    letter-spacing: 0.2px;
+}
+
+footer.pie p::before {
+    content: "TecnoDesk · ";
+    color: #93c5fd;
+    font-weight: 600;
+}
+
+/* Detalles responsive */
+@media (max-width: 768px) {
+    .menu a {
+        width: 100%;
+    }
+
+    .chat-formulario {
+        flex-direction: column;
+    }
+
+    .chat-formulario button {
+        width: 100%;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}

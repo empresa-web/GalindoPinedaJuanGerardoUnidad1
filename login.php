@@ -50,7 +50,7 @@ include 'includes/header.php';
 
             <input type="password" name="password" placeholder="Contraseña" required>
 
-            <button type="submit">Ingresar</button>
+            <button type="submit"><i class="bi bi-box-arrow-in-right"></i> Ingresar</button>
         </form>
 
         <p><a href="recuperar.php">¿Olvidaste tu contraseña?</a></p>

@@ -59,7 +59,7 @@ include 'includes/header.php';
             <label>Verificación humana: ¿Cuánto es 3 + 4?</label>
             <input type="text" name="captcha" id="captcha" placeholder="Respuesta" required>
 
-            <button type="submit">Crear cuenta</button>
+            <button type="submit"><i class="bi bi-check-circle"></i> Crear cuenta</button>
         </form>
 
         <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión aquí</a></p>
