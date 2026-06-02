@@ -1,0 +1,52 @@
+<?php
+session_start();
+
+require_once 'config/database.php';
+require_once 'clases/Usuario.php';
+require_once 'clases/Validador.php';
+
+$db = new Database();
+$conn = $db->conectar();
+$usuario = new Usuario($conn);
+
+$mensaje = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $correo = Validador::limpiar($_POST["correo"]);
+    $password = $_POST["password"];
+
+    if (!Validador::obligatorio($correo) || !Validador::obligatorio($password)) {
+        $mensaje = "Todos los campos son obligatorios.";
+    } elseif (!Validador::correo($correo)) {
+        $mensaje = "El correo electrónico no es válido.";
+    } elseif ($usuario->login($correo, $password)) {
+        header("Location: panel.php");
+        exit;
+    } else {
+        $mensaje = "Correo o contraseña incorrectos.";
+    }
+}
+
+include 'includes/header.php';
+?>
+
+<main class="contenido">
+    <section class="formulario">
+        <h2>Inicio de sesión</h2>
+
+        <?php if ($mensaje != ""): ?>
+            <p class="mensaje"><?php echo $mensaje; ?></p>
+        <?php endif; ?>
+
+        <form method="POST">
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+
+            <button type="submit">Ingresar</button>
+        </form>
+
+        <p><a href="recuperar.php">¿Olvidaste tu contraseña?</a></p>
+    </section>
+</main>
+
+<?php include 'includes/footer.php'; ?>
