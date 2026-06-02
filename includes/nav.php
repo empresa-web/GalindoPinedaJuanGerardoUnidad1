@@ -5,7 +5,7 @@
         <a href="ayuda.php">Ayuda</a>
         <a href="contacto.php">Contáctanos</a>
         <a href="buzon.php">Buzón</a>
-        <a href="chat.php">Chat</a>
+        <a href="soporte.php">Chat</a>
         <a href="mapa-sitio.php">Mapa del sitio</a>
         <a href="registro.php">Registrarse</a>
         <a href="login.php">Iniciar sesión</a>

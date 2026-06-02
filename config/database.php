@@ -1,9 +1,9 @@
 <?php
 class Database {
-    private $host = "NOMBRE_SERVIDOR"; // ej: sqlXXX.infinityfree.com
-    private $db   = "NOMBRE_BASE";     // ej: if0_XXXX_tecnodesk
-    private $user = "USUARIO";         // ej: if0_XXXX
-    private $pass = "CONTRASEÑA";      // la que configures
+    private $host = "sql302.infinityfree.com"; // ej: sqlXXX.infinityfree.com
+    private $db   = "if0_42081898_tecnodesk";     // ej: if0_XXXX_tecnodesk
+    private $user = "if0_42081898";         // ej: if0_XXXX
+    private $pass = "9bLtecKw0YE";      // la que configures
     private $conn;
 
     public function conectar() {

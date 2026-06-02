@@ -39,7 +39,7 @@
             [
                 "titulo" => "Chat",
                 "descripcion" => "Chat de atención al usuario.",
-                "url" => "chat.php",
+                "url" => "soporte.php",
                 "palabras" => "chat atencion usuario soporte"
             ],
             [
