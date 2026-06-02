@@ -3,26 +3,52 @@
 <main class="contenido">
     <section class="seccion">
         <h2>Centro de ayuda</h2>
+        <p>
+            En esta sección se responden dudas frecuentes sobre el uso de TecnoDesk y las opciones
+            disponibles dentro del sitio.
+        </p>
+    </section>
 
-        <div class="bloque">
-            <h3>¿Cómo me registro?</h3>
-            <p>Debes ingresar a la sección <strong>Registrarse</strong>, llenar el formulario y completar la verificación humana.</p>
-        </div>
+    <section class="tarjetas">
+        <article class="tarjeta">
+            <h3>¿Cómo crear una cuenta?</h3>
+            <p>
+                Ingresa a la sección Registrarse, llena tus datos, escribe una contraseña de mínimo
+                ocho caracteres y responde la verificación humana.
+            </p>
+        </article>
 
-        <div class="bloque">
-            <h3>¿Cómo inicio sesión?</h3>
-            <p>Debes usar el correo y contraseña registrados previamente en el sistema para acceder a tu panel.</p>
-        </div>
+        <article class="tarjeta">
+            <h3>¿Cómo iniciar sesión?</h3>
+            <p>
+                Usa el correo y la contraseña registrados. Si los datos son correctos, el sistema
+                te enviará al panel de usuario.
+            </p>
+        </article>
 
-        <div class="bloque">
+        <article class="tarjeta">
             <h3>¿Qué hago si olvidé mi contraseña?</h3>
-            <p>Ingresa a <strong>Recuperación de contraseña</strong> y escribe tu correo para solicitar ayuda y restablecerla.</p>
-        </div>
+            <p>
+                Entra a Recuperación de contraseña, escribe tu correo y completa la verificación
+                para simular el proceso de recuperación.
+            </p>
+        </article>
 
-        <div class="bloque">
-            <h3>¿Cómo contactar al soporte?</h3>
-            <p>Usa la sección <strong>Contáctanos</strong> o <strong>Buzón</strong> para enviar tus mensajes al equipo de TecnoDesk.</p>
-        </div>
+        <article class="tarjeta">
+            <h3>¿Dónde puedo enviar un mensaje?</h3>
+            <p>
+                Puedes usar la sección Contáctanos. El mensaje se enviará al buzón y quedará
+                registrado en la base de datos.
+            </p>
+        </article>
+    </section>
+
+    <section class="seccion">
+        <h2>Recomendaciones de uso</h2>
+        <p>
+            Verifica que tus datos estén escritos correctamente antes de enviar cualquier formulario.
+            El sitio cuenta con validaciones en el navegador y en el servidor para reducir errores.
+        </p>
     </section>
 </main>
 

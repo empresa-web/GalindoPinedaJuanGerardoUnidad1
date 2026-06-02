@@ -4,7 +4,8 @@
     <section class="seccion">
         <h2>Chat de soporte</h2>
         <p>
-            Este chat permite simular una conversación entre el usuario y el equipo de soporte de TecnoDesk.
+            Este espacio simula una conversación inicial con el área de soporte. Puedes escribir
+            dudas relacionadas con registro, contraseña, servicios o contacto.
         </p>
 
         <div class="chat-contenedor" id="chatContenedor">
@@ -18,6 +19,24 @@
             <input type="text" id="mensajeChat" placeholder="Escribe tu mensaje..." required>
             <button type="submit">Enviar</button>
         </form>
+    </section>
+
+    <section class="tarjetas">
+        <article class="tarjeta">
+            <h3>Temas sugeridos</h3>
+            <p>
+                Puedes preguntar sobre registro, recuperación de contraseña, servicios disponibles
+                o formas de contacto.
+            </p>
+        </article>
+
+        <article class="tarjeta">
+            <h3>Respuesta inmediata</h3>
+            <p>
+                El chat muestra respuestas automáticas básicas para orientar al usuario dentro
+                del sitio.
+            </p>
+        </article>
     </section>
 </main>
 

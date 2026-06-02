@@ -31,8 +31,15 @@ include 'includes/header.php';
 ?>
 
 <main class="contenido">
-    <section class="formulario">
+    <section class="seccion">
         <h2>Inicio de sesión</h2>
+        <p>
+            Accede con tu correo y contraseña para entrar al panel de usuario de TecnoDesk.
+        </p>
+    </section>
+
+    <section class="formulario">
+        <h2>Acceso de usuario</h2>
 
         <?php if ($mensaje != ""): ?>
             <p class="mensaje"><?php echo $mensaje; ?></p>
@@ -40,12 +47,30 @@ include 'includes/header.php';
 
         <form method="POST">
             <input type="email" name="correo" placeholder="Correo electrónico" required>
+
             <input type="password" name="password" placeholder="Contraseña" required>
 
             <button type="submit">Ingresar</button>
         </form>
 
         <p><a href="recuperar.php">¿Olvidaste tu contraseña?</a></p>
+        <p>¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a></p>
+    </section>
+
+    <section class="tarjetas">
+        <article class="tarjeta">
+            <h3>Acceso protegido</h3>
+            <p>
+                El sistema verifica la contraseña cifrada antes de permitir el acceso al panel.
+            </p>
+        </article>
+
+        <article class="tarjeta">
+            <h3>Sesión de usuario</h3>
+            <p>
+                Al iniciar sesión correctamente, se crea una sesión para mantener el acceso activo.
+            </p>
+        </article>
     </section>
 </main>
 

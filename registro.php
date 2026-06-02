@@ -34,6 +34,14 @@ include 'includes/header.php';
 ?>
 
 <main class="contenido">
+    <section class="seccion">
+        <h2>Crear cuenta</h2>
+        <p>
+            Regístrate para acceder al panel de TecnoDesk. Tus datos serán validados antes de
+            crear la cuenta.
+        </p>
+    </section>
+
     <section class="formulario">
         <h2>Registro de usuario</h2>
 
@@ -51,8 +59,26 @@ include 'includes/header.php';
             <label>Verificación humana: ¿Cuánto es 3 + 4?</label>
             <input type="text" name="captcha" id="captcha" placeholder="Respuesta" required>
 
-            <button type="submit">Registrarse</button>
+            <button type="submit">Crear cuenta</button>
         </form>
+
+        <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión aquí</a></p>
+    </section>
+
+    <section class="tarjetas">
+        <article class="tarjeta">
+            <h3>Contraseña segura</h3>
+            <p>
+                El sistema guarda la contraseña cifrada mediante funciones de seguridad de PHP.
+            </p>
+        </article>
+
+        <article class="tarjeta">
+            <h3>Validación doble</h3>
+            <p>
+                Los datos se revisan en el navegador y también en el servidor antes de almacenarse.
+            </p>
+        </article>
     </section>
 </main>
 
