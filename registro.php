@@ -15,27 +15,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = Validador::limpiar($_POST["nombre"]);
     $correo = Validador::limpiar($_POST["correo"]);
     $password = $_POST["password"];
-    $captcha = $_POST["captcha"];
+    $captcha = trim($_POST["captcha"]);
 
-    if (!Validador::obligatorio($nombre) || !Validador::obligatorio($correo) || !Validador::obligatorio($password)) {
+    if (
+        !Validador::obligatorio($nombre) ||
+        !Validador::obligatorio($correo) ||
+        !Validador::obligatorio($password) ||
+        !Validador::obligatorio($captcha)
+    ) {
         $mensaje = "Todos los campos son obligatorios.";
     } elseif (!Validador::correo($correo)) {
         $mensaje = "El correo electrónico no es válido.";
     } elseif (!Validador::password($password)) {
         $mensaje = "La contraseña debe tener mínimo 8 caracteres.";
-    } elseif (!Validador::captcha($captcha)) {
+    } elseif (!isset($_SESSION['captcha_registro'])) {
+        $mensaje = "No se pudo validar la verificación humana. Intenta nuevamente.";
+    } elseif ((int)$captcha !== (int)$_SESSION['captcha_registro']) {
         $mensaje = "Verificación humana incorrecta.";
     } else {
         $mensaje = $usuario->registrar($nombre, $correo, $password);
+        unset($_SESSION['captcha_registro']);
     }
 }
+
+$numero1 = rand(1, 10);
+$numero2 = rand(1, 10);
+$_SESSION['captcha_registro'] = $numero1 + $numero2;
 
 include 'includes/header.php';
 ?>
 
 <main class="contenido">
     <section class="seccion">
-        <h2>Crear cuenta</h2>
+        <h2><i class="bi bi-person-plus"></i> Crear cuenta</h2>
         <p>
             Regístrate para acceder al panel de TecnoDesk. Tus datos serán validados antes de
             crear la cuenta.
@@ -56,10 +68,12 @@ include 'includes/header.php';
 
             <input type="password" name="password" id="password" placeholder="Contraseña" required minlength="8">
 
-            <label>Verificación humana: ¿Cuánto es 3 + 4?</label>
-            <input type="text" name="captcha" id="captcha" placeholder="Respuesta" required>
+            <label>
+                Verificación humana: ¿Cuánto es <?php echo $numero1; ?> + <?php echo $numero2; ?>?
+            </label>
+            <input type="number" name="captcha" id="captcha" placeholder="Respuesta" required>
 
-            <button type="submit"><i class="bi bi-check-circle"></i> Crear cuenta</button>
+            <button type="submit">Crear cuenta</button>
         </form>
 
         <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión aquí</a></p>

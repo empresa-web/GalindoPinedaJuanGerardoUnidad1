@@ -22,22 +22,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = Validador::limpiar($_POST["correo"]);
     $asunto = Validador::limpiar($_POST["asunto"]);
     $mensaje = Validador::limpiar($_POST["mensaje"]);
-    $captcha = $_POST["captcha"];
+    $captcha = trim($_POST["captcha"]);
 
     if (
         !Validador::obligatorio($nombre) ||
         !Validador::obligatorio($correo) ||
         !Validador::obligatorio($asunto) ||
-        !Validador::obligatorio($mensaje)
+        !Validador::obligatorio($mensaje) ||
+        !Validador::obligatorio($captcha)
     ) {
         $respuesta = "Todos los campos son obligatorios.";
     } elseif (!Validador::correo($correo)) {
         $respuesta = "El correo electrónico no es válido.";
-    } elseif (!Validador::captcha($captcha)) {
+    } elseif (!isset($_SESSION['captcha_contacto'])) {
+        $respuesta = "No se pudo validar la verificación humana. Intenta enviar el formulario nuevamente.";
+    } elseif ((int)$captcha !== (int)$_SESSION['captcha_contacto']) {
         $respuesta = "Verificación humana incorrecta.";
     } else {
         $respuesta = $objMensaje->guardar($nombre, $correo, $asunto, $mensaje);
         $datosValidos = true;
+
+        unset($_SESSION['captcha_contacto']);
     }
 }
 
@@ -63,6 +68,11 @@ include 'includes/header.php';
                 <p><strong>Asunto:</strong> <?php echo $asunto; ?></p>
                 <p><strong>Mensaje:</strong> <?php echo $mensaje; ?></p>
             </div>
+        <?php endif; ?>
+
+        <?php if (!$datosValidos && $respuesta != ""): ?>
+            <br>
+            <a href="contacto.php" class="btn">Intentar nuevamente</a>
         <?php endif; ?>
     </section>
 </main>

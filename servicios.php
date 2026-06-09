@@ -1,55 +1,70 @@
 <?php include 'includes/header.php'; ?>
 
 <main class="contenido">
-    <section class="seccion">
+    <section class="seccion encabezado-seccion">
         <h2>Servicios</h2>
         <p>
-            TecnoDesk reúne servicios básicos de soporte técnico orientados a usuarios que
-            necesitan atención clara, rápida y fácil de solicitar.
+            En TecnoDesk se integran diferentes opciones de soporte y orientación tecnológica
+            para ofrecer una atención más ordenada y accesible.
         </p>
+    </section>
+
+    <section class="servicios-grid">
+        <article class="servicio-card">
+            <img src="img/Soporte.png" alt="Soporte técnico">
+            <div class="servicio-info">
+                <h3><i class="bi bi-tools"></i> Soporte técnico</h3>
+                <p>
+                    Atención para fallas comunes, dudas sobre uso de sistemas, acceso a plataformas
+                    y resolución básica de incidencias.
+                </p>
+            </div>
+        </article>
+
+        <article class="servicio-card">
+            <img src="img/instalacion.png" alt="Instalación de software">
+            <div class="servicio-info">
+                <h3><i class="bi bi-laptop"></i> Instalación de software</h3>
+                <p>
+                    Apoyo en instalación, configuración inicial y orientación para el uso
+                    de herramientas digitales de trabajo o estudio.
+                </p>
+            </div>
+        </article>
+
+        <article class="servicio-card">
+            <img src="img/mantenimientos.png" alt="Mantenimiento preventivo">
+            <div class="servicio-info">
+                <h3><i class="bi bi-cpu"></i> Mantenimiento preventivo</h3>
+                <p>
+                    Recomendaciones y buenas prácticas para mantener el equipo
+                    en mejores condiciones y evitar problemas frecuentes.
+                </p>
+            </div>
+        </article>
     </section>
 
     <section class="tarjetas">
         <article class="tarjeta">
-            <h3>Soporte técnico</h3>
+            <h3><i class="bi bi-check-circle-fill"></i> Atención clara</h3>
             <p>
-                Atención para problemas relacionados con equipos de cómputo, acceso a sistemas,
-                fallas comunes y dudas generales de uso.
+                Cada servicio está orientado a brindar ayuda específica y comprensible para el usuario.
             </p>
         </article>
 
         <article class="tarjeta">
-            <h3>Instalación de software</h3>
+            <h3><i class="bi bi-lightning-charge-fill"></i> Respuesta rápida</h3>
             <p>
-                Orientación para instalar programas, configurar herramientas de trabajo y resolver
-                problemas básicos durante el proceso.
+                El sistema facilita el contacto y la consulta de información sin complicaciones.
             </p>
         </article>
 
         <article class="tarjeta">
-            <h3>Mantenimiento preventivo</h3>
+            <h3><i class="bi bi-diagram-3-fill"></i> Organización</h3>
             <p>
-                Recomendaciones para cuidar el rendimiento de los equipos, evitar fallas y mantener
-                un uso adecuado de los recursos tecnológicos.
+                El sitio concentra servicios, ayuda, soporte y acceso de usuarios en una sola plataforma.
             </p>
         </article>
-
-        <article class="tarjeta">
-            <h3>Atención a solicitudes</h3>
-            <p>
-                Recepción de reportes mediante formularios, buzón de mensajes y seguimiento desde
-                el panel de usuario.
-            </p>
-        </article>
-    </section>
-
-    <section class="seccion">
-        <h2>Proceso de atención</h2>
-        <p>
-            El usuario puede revisar los servicios disponibles, enviar un mensaje desde contacto
-            o iniciar sesión para acceder a su panel. De esta forma, el sitio mantiene una estructura
-            sencilla y fácil de comprender.
-        </p>
     </section>
 </main>
 

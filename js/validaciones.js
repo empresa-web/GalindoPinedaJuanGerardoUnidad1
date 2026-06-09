@@ -14,8 +14,8 @@ function validarRegistro() {
         return false;
     }
 
-    if (captcha !== "7") {
-        alert("La verificación humana es incorrecta.");
+    if (isNaN(captcha)) {
+        alert("La verificación humana debe ser un número.");
         return false;
     }
 
@@ -34,8 +34,8 @@ function validarContacto() {
         return false;
     }
 
-    if (captcha !== "7") {
-        alert("La verificación humana es incorrecta.");
+    if (isNaN(captcha)) {
+        alert("La verificación humana debe ser un número.");
         return false;
     }
 
@@ -71,6 +71,10 @@ function enviarMensajeChat() {
         textoRespuesta = "Puedes consultar nuestros servicios en la sección Servicios.";
     } else if (textoMinuscula.includes("contacto")) {
         textoRespuesta = "Puedes comunicarte con nosotros desde la sección Contáctanos.";
+    } else if (textoMinuscula.includes("buzón") || textoMinuscula.includes("buzon")) {
+        textoRespuesta = "Puedes enviar comentarios o reportes desde la sección Buzón.";
+    } else if (textoMinuscula.includes("ayuda")) {
+        textoRespuesta = "Puedes revisar preguntas frecuentes desde la sección Ayuda.";
     }
 
     respuesta.innerHTML = "<strong>Soporte TecnoDesk:</strong><p>" + textoRespuesta + "</p>";
