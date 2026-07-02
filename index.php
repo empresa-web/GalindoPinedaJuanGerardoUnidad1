@@ -21,6 +21,46 @@
         </div>
     </section>
 
+    <section class="seccion">
+        <h2>Estado del sistema TecnoDesk</h2>
+        
+        <div id="panel-sistema" class="panel-sistema">
+            <p id="hora"></p>
+            <p id="sincrono"></p>
+            <p id="asincrono"></p>
+        </div>
+    </section>
+
+    <section class="dashboard">
+
+        <h2>Panel de control TecnoDesk</h2>
+
+        <div class="grid-dashboard">
+
+            <div class="card-dashboard">
+                <h3>⏱ Hora del sistema</h3>
+                <p id="hora">--:--:--</p>
+            </div>
+
+            <div class="card-dashboard">
+                <h3>🧮 Operación síncrona</h3>
+                <p id="sincrono">Cargando...</p>
+            </div>
+
+            <div class="card-dashboard">
+                <h3>📡 Estado del servidor</h3>
+                <p id="asincrono">Conectando...</p>
+            </div>
+
+            <div class="card-dashboard">
+                <h3>⚡ Estado general</h3>
+                <p id="estado">Sistema activo</p>
+            </div>
+
+        </div>
+
+    </section>
+
     <section class="estadisticas">
         <div class="stat-card">
             <i class="bi bi-headset"></i>

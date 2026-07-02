@@ -17,4 +17,8 @@
     </div>
 </header>
 
+<button id="toggleTema" class="btn">
+    🌙 Modo oscuro
+</button>
+
 <?php include 'nav.php'; ?>

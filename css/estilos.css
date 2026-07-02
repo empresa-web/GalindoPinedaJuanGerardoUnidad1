@@ -860,3 +860,86 @@ section.error.error-mejorado .acciones-error {
 .btn.secundario:hover {
     background: #374151;
 }
+
+.panel-sistema {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    margin-top: 15px;
+}
+
+.panel-sistema p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.dashboard {
+    padding: 20px;
+}
+
+.dashboard h2 {
+    margin-bottom: 20px;
+}
+
+.grid-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.card-dashboard {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-dashboard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.card-dashboard h3 {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.card-dashboard p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+:root {
+    --bg: #f3f4f6;
+    --text: #111827;
+    --card: #ffffff;
+    --primary: #2563eb;
+}
+
+body.dark-mode {
+    --bg: #0f172a;
+    --text: #f1f5f9;
+    --card: #1e293b;
+    --primary: #38bdf8;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+.card-dashboard {
+    background: var(--card);
+    color: var(--text);
+}
+
+.btn {
+    background: var(--primary);
+    transition: all 0.3s ease;
+}

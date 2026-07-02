@@ -6,6 +6,8 @@ class TecnoDeskUI {
         this.initTransiciones();
         this.initSincronas();
         this.initAsincronas();
+        this.mostrarDashboard();
+        this.initTema();
     }
 
     /* =========================
@@ -48,6 +50,46 @@ class TecnoDeskUI {
 
         let resultado = await promesa;
         console.log(resultado);
+    }
+
+    /* =========================
+       MOSTRAR EN PÁGINA (UI)
+    ========================= */
+    mostrarEnPagina() {
+        let hora = this.obtenerHora();
+        let suma = this.sumaSimple(5, 3);
+
+        let panelHora = document.getElementById("hora");
+        let panelSincrono = document.getElementById("sincrono");
+        let panelAsincrono = document.getElementById("asincrono");
+
+        if (panelHora && panelSincrono && panelAsincrono) {
+            panelHora.innerText = "⏱ Hora del sistema: " + hora;
+            panelSincrono.innerText = "🧮 Síncrono: 5 + 3 = " + suma;
+
+            this.simularServidor().then(res => {
+                panelAsincrono.innerText = "📡 Asíncrono: " + res;
+            });
+        }
+    }
+
+    mostrarDashboard() {
+        let hora = this.obtenerHora();
+        let suma = this.sumaSimple(5, 3);
+
+        let horaEl = document.getElementById("hora");
+        let sincronoEl = document.getElementById("sincrono");
+        let asincronoEl = document.getElementById("asincrono");
+
+        if (horaEl && sincronoEl && asincronoEl) {
+
+            horaEl.innerText = hora;
+            sincronoEl.innerText = "5 + 3 = " + suma;
+
+            this.simularServidor().then(res => {
+                asincronoEl.innerText = res;
+            });
+        }
     }
 
     /* =========================
@@ -102,6 +144,32 @@ class TecnoDeskUI {
                 }, 200);
             });
         });
+    }
+
+    initTema() {
+        const boton = document.getElementById("toggleTema");
+
+        if (!boton) return;
+
+        boton.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                boton.innerHTML = "☀️ Modo claro";
+                localStorage.setItem("tema", "dark");
+            } else {
+                boton.innerHTML = "🌙 Modo oscuro";
+                localStorage.setItem("tema", "light");
+            }
+        });
+
+        // cargar tema guardado
+        let tema = localStorage.getItem("tema");
+
+        if (tema === "dark") {
+            document.body.classList.add("dark-mode");
+            boton.innerHTML = "☀️ Modo claro";
+        }
     }
 }
 
