@@ -38,27 +38,21 @@
         <div class="grid-dashboard">
 
             <div class="card-dashboard">
-                <h3>⏱ Hora del sistema</h3>
-                <p id="hora">--:--:--</p>
+                <h3>Hora del sistema</h3>
+                <p id="hora"></p>
             </div>
 
             <div class="card-dashboard">
-                <h3>🧮 Operación síncrona</h3>
-                <p id="sincrono">Cargando...</p>
+                <h3>Síncrono</h3>
+                <p id="sincrono"></p>
             </div>
 
             <div class="card-dashboard">
-                <h3>📡 Estado del servidor</h3>
-                <p id="asincrono">Conectando...</p>
-            </div>
-
-            <div class="card-dashboard">
-                <h3>⚡ Estado general</h3>
-                <p id="estado">Sistema activo</p>
+                <h3>Asíncrono</h3>
+                <p id="asincrono"></p>
             </div>
 
         </div>
-
     </section>
 
     <section class="estadisticas">

@@ -147,29 +147,27 @@ class TecnoDeskUI {
     }
 
     initTema() {
-        const boton = document.getElementById("toggleTema");
+        const btn = document.getElementById("toggleTema");
 
-        if (!boton) return;
+        if (!btn) return;
 
-        boton.addEventListener("click", () => {
+        // cargar estado guardado
+        if (localStorage.getItem("tema") === "dark") {
+            document.body.classList.add("dark-mode");
+            btn.innerText = "☀️ Modo claro";
+        }
+
+        btn.addEventListener("click", () => {
             document.body.classList.toggle("dark-mode");
 
             if (document.body.classList.contains("dark-mode")) {
-                boton.innerHTML = "☀️ Modo claro";
+                btn.innerText = "☀️ Modo claro";
                 localStorage.setItem("tema", "dark");
             } else {
-                boton.innerHTML = "🌙 Modo oscuro";
+                btn.innerText = "🌙 Modo oscuro";
                 localStorage.setItem("tema", "light");
             }
         });
-
-        // cargar tema guardado
-        let tema = localStorage.getItem("tema");
-
-        if (tema === "dark") {
-            document.body.classList.add("dark-mode");
-            boton.innerHTML = "☀️ Modo claro";
-        }
     }
 }
 
