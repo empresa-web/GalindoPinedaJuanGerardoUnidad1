@@ -4,42 +4,45 @@ class TecnoDeskUI {
         this.initEventosMouse();
         this.initAnimaciones();
         this.initTransiciones();
-        this.initFuncionesAsincronas();
-        this.initFuncionesSincronas();
+        this.initSincronas();
+        this.initAsincronas();
     }
 
     /* =========================
        FUNCIONES SÍNCRONAS
     ========================= */
-    initFuncionesSincronas() {
-        console.log("Funciones síncronas activadas");
+    initSincronas() {
+        let hora = this.obtenerHora();
+        console.log("⏱ Sistema sincronizado:", hora);
 
-        let hora = this.obtenerHoraActual();
-        console.log("Hora del sistema:", hora);
+        let suma = this.sumaSimple(5, 3);
+        console.log("🧮 Operación síncrona:", suma);
     }
 
-    obtenerHoraActual() {
+    obtenerHora() {
         let fecha = new Date();
         return fecha.getHours() + ":" + fecha.getMinutes() + ":" + fecha.getSeconds();
+    }
+
+    sumaSimple(a, b) {
+        return a + b;
     }
 
     /* =========================
        FUNCIONES ASÍNCRONAS
     ========================= */
-    initFuncionesAsincronas() {
+    initAsincronas() {
         setTimeout(() => {
-            console.log("Carga asíncrona simulada (setTimeout)");
+            console.log("⏳ Carga asíncrona simulada completada (setTimeout)");
         }, 2000);
 
-        this.cargarDatosSimulados();
+        this.simularServidor();
     }
 
-    async cargarDatosSimulados() {
-        console.log("Iniciando carga asíncrona...");
-
+    async simularServidor() {
         let promesa = new Promise((resolve) => {
             setTimeout(() => {
-                resolve("Datos cargados correctamente desde servidor simulado");
+                resolve("📡 Datos recibidos desde servidor simulado");
             }, 3000);
         });
 
@@ -51,19 +54,15 @@ class TecnoDeskUI {
        EVENTOS DEL MOUSE
     ========================= */
     initEventosMouse() {
-        let botones = document.querySelectorAll("button, .btn, a");
+        let elementos = document.querySelectorAll("button, .btn, a");
 
-        botones.forEach(boton => {
-            boton.addEventListener("mouseover", () => {
-                boton.style.transform = "scale(1.05)";
+        elementos.forEach(el => {
+            el.addEventListener("mouseover", () => {
+                el.style.transform = "scale(1.05)";
             });
 
-            boton.addEventListener("mouseout", () => {
-                boton.style.transform = "scale(1)";
-            });
-
-            boton.addEventListener("click", () => {
-                console.log("Elemento clickeado:", boton.innerText);
+            el.addEventListener("mouseout", () => {
+                el.style.transform = "scale(1)";
             });
         });
     }
@@ -72,12 +71,12 @@ class TecnoDeskUI {
        ANIMACIONES
     ========================= */
     initAnimaciones() {
-        let tarjetas = document.querySelectorAll(".tarjeta, .servicio-card");
+        let cards = document.querySelectorAll(".tarjeta, .servicio-card");
 
-        tarjetas.forEach(card => {
+        cards.forEach(card => {
             card.addEventListener("mouseenter", () => {
-                card.style.transition = "all 0.3s ease";
                 card.style.transform = "translateY(-8px)";
+                card.style.transition = "all 0.3s ease";
             });
 
             card.addEventListener("mouseleave", () => {
@@ -106,7 +105,7 @@ class TecnoDeskUI {
     }
 }
 
-/* Inicializar el sistema */
+/* Inicializar sistema */
 document.addEventListener("DOMContentLoaded", () => {
     new TecnoDeskUI();
 });
