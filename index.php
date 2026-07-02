@@ -31,30 +31,6 @@
         </div>
     </section>
 
-    <section class="dashboard">
-
-        <h2>Panel de control TecnoDesk</h2>
-
-        <div class="grid-dashboard">
-
-            <div class="card-dashboard">
-                <h3>Hora del sistema</h3>
-                <p id="hora"></p>
-            </div>
-
-            <div class="card-dashboard">
-                <h3>Síncrono</h3>
-                <p id="sincrono"></p>
-            </div>
-
-            <div class="card-dashboard">
-                <h3>Asíncrono</h3>
-                <p id="asincrono"></p>
-            </div>
-
-        </div>
-    </section>
-
     <section class="estadisticas">
         <div class="stat-card">
             <i class="bi bi-headset"></i>

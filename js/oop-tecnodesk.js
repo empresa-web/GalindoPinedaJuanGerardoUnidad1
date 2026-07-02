@@ -74,22 +74,23 @@ class TecnoDeskUI {
     }
 
     mostrarDashboard() {
+
+        let horaEl = document.getElementById("hora");
+        let sinEl = document.getElementById("sincrono");
+        let asyEl = document.getElementById("asincrono");
+
+        // 🔴 si no existen, salir (IMPORTANTE)
+        if (!horaEl || !sinEl || !asyEl) return;
+
         let hora = this.obtenerHora();
         let suma = this.sumaSimple(5, 3);
 
-        let horaEl = document.getElementById("hora");
-        let sincronoEl = document.getElementById("sincrono");
-        let asincronoEl = document.getElementById("asincrono");
+        horaEl.innerText = hora;
+        sinEl.innerText = "5 + 3 = " + suma;
 
-        if (horaEl && sincronoEl && asincronoEl) {
-
-            horaEl.innerText = hora;
-            sincronoEl.innerText = "5 + 3 = " + suma;
-
-            this.simularServidor().then(res => {
-                asincronoEl.innerText = res;
-            });
-        }
+        this.simularServidor().then(res => {
+            asyEl.innerText = res;
+        });
     }
 
     /* =========================
@@ -151,7 +152,7 @@ class TecnoDeskUI {
 
         if (!btn) return;
 
-        // cargar estado guardado
+        // aplicar tema guardado al cargar
         if (localStorage.getItem("tema") === "dark") {
             document.body.classList.add("dark-mode");
             btn.innerText = "☀️ Modo claro";

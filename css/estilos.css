@@ -921,6 +921,19 @@ section.error.error-mejorado .acciones-error {
     --primary: #2563eb;
 }
 
+/* =========================
+   VARIABLES TEMA
+========================= */
+:root {
+    --bg: #f3f4f6;
+    --text: #111827;
+    --card: #ffffff;
+    --primary: #2563eb;
+}
+
+/* =========================
+   MODO OSCURO
+========================= */
 body.dark-mode {
     --bg: #0f172a;
     --text: #f1f5f9;
@@ -928,18 +941,231 @@ body.dark-mode {
     --primary: #38bdf8;
 }
 
+/* =========================
+   BASE
+========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
     background: var(--bg);
     color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* =========================
+   HEADER
+========================= */
+.encabezado {
+    background: linear-gradient(135deg, #111827, #1e3a8a);
+    color: #ffffff;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.subtitulo {
+    font-size: 16px;
+    color: #d1d5db;
+}
+
+/* =========================
+   MENU
+========================= */
+.menu {
+    background: var(--card);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.16);
+}
+
+.contenedor-menu {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.menu a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--primary);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+.contenido {
+    max-width: 1200px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 15px;
+    flex: 1;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    background: var(--card);
+    padding: 50px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* =========================
+   SECCIONES Y TARJETAS
+========================= */
+.seccion,
+.tarjeta,
+.bloque,
+.resultado,
+.formulario {
+    background: var(--card);
+    color: var(--text);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    border: 1px solid rgba(0,0,0,0.08);
     transition: all 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   FORMULARIOS
+========================= */
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background: var(--card);
+    color: var(--text);
+}
+
+form button {
+    padding: 12px 20px;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+.dashboard {
+    padding: 20px;
+}
+
+.grid-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
 }
 
 .card-dashboard {
     background: var(--card);
     color: var(--text);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
 }
 
-.btn {
-    background: var(--primary);
-    transition: all 0.3s ease;
+.card-dashboard:hover {
+    transform: translateY(-6px);
+}
+
+/* =========================
+   CHAT
+========================= */
+.chat-contenedor {
+    background: var(--card);
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 18px;
+    min-height: 300px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer.pie {
+    background: #111827;
+    color: #ffffff;
+    text-align: center;
+    padding: 22px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .contenedor-menu {
+        flex-direction: column;
+    }
+
+    .hero {
+        padding: 30px 15px;
+    }
 }
